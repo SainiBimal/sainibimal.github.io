@@ -1,4 +1,11 @@
-html {
-  scroll-padding-top: 80px; /* Adjust to the height of your navbar */
-  scroll-behavior: smooth;  /* Smooth scrolling */
+/* Header Links */
+header p a {
+  color: #fff;          /* Make links white */
+  font-weight: bold;
+  margin: 0 8px;
+  transition: 0.3s;
+}
+
+header p a:hover {
+  color: #ffd700;       /* Golden color on hover for effect */
 }
