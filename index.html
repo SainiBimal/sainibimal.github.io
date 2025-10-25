@@ -1,150 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bimal Kumar Saini | Interactive Resume</title>
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollSmoother.min.js"></script>
-<style>
-html, body { height: 100%; margin:0; background:#1f2937; color:#f3f4f6; overflow-x:hidden; font-family: 'Inter', sans-serif;}
-.section { max-width:1100px; margin:auto; padding:6rem 1.5rem; position:relative; }
-.fade-up { opacity:0; transform:translateY(40px); }
-.gradient-text { background:linear-gradient(90deg,#3b82f6,#2563eb,#9333ea); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-.hover-card { transition:all 0.4s ease; background:#111827; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.4); }
-.hover-card:hover { transform:translateY(-10px) scale(1.03); box-shadow:0 20px 40px rgba(0,0,0,0.6);}
-.nav { position:fixed; top:0; width:100%; backdrop-filter:blur(12px); background:rgba(31,41,55,0.8); z-index:100; color:#f3f4f6; }
-.nav a { color:#f3f4f6; }
-.nav a:hover { color:#3b82f6; }
-.cursor { position:fixed; top:0; left:0; width:20px; height:20px; border-radius:50%; background:rgba(59,130,246,0.7); pointer-events:none; transform:translate(-50%,-50%); transition:0.15s; z-index:9999; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bimal Kumar Saini | Resume</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f4f4f9;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: #0b3d91;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    header p {
+      margin: 5px 0;
+      font-size: 1em;
+    }
+
+    /* Navigation */
+    nav {
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      border-bottom: 1px solid #ddd;
+      z-index: 100;
+    }
+    nav a {
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background: #0b3d91;
+      color: #fff;
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    section h2 {
+      border-bottom: 2px solid #0b3d91;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      color: #0b3d91;
+    }
+
+    /* Lists */
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+
+    /* Projects links */
+    .project a {
+      color: #0b3d91;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    footer {
+      background: #0b3d91;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body>
 
-<div class="cursor" id="cursor"></div>
+  <!-- Header -->
+  <header>
+    <h1>Bimal Kumar Saini</h1>
+    <p>Tigri, New Delhi | +91-9017295863 | bimalsaini333@gmail.com</p>
+    <p>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a> |
+      <a href="https://github.com" target="_blank">GitHub</a> |
+      <a href="https://kaggle.com" target="_blank">Kaggle</a>
+    </p>
+  </header>
 
-<!-- Navbar -->
-<nav class="nav flex justify-center space-x-8 py-4 text-sm font-medium">
-  <a href="#profile">Profile</a>
-  <a href="#experience">Experience</a>
-  <a href="#projects">Projects</a>
-  <a href="#skills">Skills</a>
-  <a href="#education">Education</a>
-</nav>
+  <!-- Navigation -->
+  <nav>
+    <a href="#profile">Profile</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+  </nav>
 
-<!-- Hero -->
-<header class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-purple-900 via-indigo-800 to-blue-900 text-white relative overflow-hidden">
-  <h1 class="text-6xl md:text-7xl font-bold mb-4 gradient-text">Bimal Kumar Saini</h1>
-  <p class="text-xl mb-2 text-gray-200">Data Analyst | Excel • SQL • Python • Power BI</p>
-  <p class="text-sm opacity-80 text-gray-300">📍 Tigri, New Delhi | 📞 +91-9017295863 | ✉️ bimalsaini333@gmail.com</p>
-  <div class="flex space-x-6 mt-6 text-white text-xl">
-    <a href="https://www.linkedin.com/in/bimalsaini333/" target="_blank">LinkedIn</a>
-    <a href="https://github.com/SainiBimal" target="_blank">GitHub</a>
-    <a href="https://www.kaggle.com/bimalkumarsaini" target="_blank">Kaggle</a>
-  </div>
-</header>
+  <!-- Profile Section -->
+  <section id="profile">
+    <h2>Profile Summary</h2>
+    <p>
+      Results-driven Data Analyst with 7+ years of engineering experience and strong expertise in Microsoft Excel, SQL,
+      Python, Power BI, and statistical modeling. Skilled in transforming raw datasets into actionable insights through
+      EDA, predictive analytics, and data storytelling to drive measurable business outcomes, including +10% ROI gain,
+      -30% ad spend reduction, and 8% improvement in EV targeting strategies. Passionate about applying machine
+      learning and big data analytics to address real-world business, marketing, and risk challenges.
+    </p>
+  </section>
 
-<!-- Profile -->
-<section id="profile" class="section fade-up bg-gray-900 rounded-xl shadow-lg">
-  <h2 class="text-4xl font-bold mb-6 gradient-text">Profile Summary</h2>
-  <p class="leading-relaxed text-gray-300">Results-driven Data Analyst with 7+ years of engineering experience, expertise in Excel, SQL, Python, Power BI, and statistical modeling. Transforms raw data into actionable insights through EDA, predictive analytics, and data storytelling to drive measurable business outcomes.</p>
-</section>
-
-<!-- Experience -->
-<section id="experience" class="section fade-up bg-gray-800 rounded-xl shadow-lg">
-  <h2 class="text-4xl font-bold mb-6 gradient-text">Professional Experience</h2>
-  <div class="space-y-6">
-    <div>
-      <h3 class="text-2xl font-bold text-blue-400">Unified Mentor & Labmentix Edtech</h3>
-      <p class="italic text-sm text-gray-300">Data Analyst Intern — Remote | Jun 2025 – Present</p>
-      <ul class="list-disc list-inside mt-2 text-gray-300 text-sm">
-        <li>Conducted analytics projects using SQL, Python, Excel.</li>
-        <li>Power BI dashboards improved HR attrition ↓12% and ad ROI ↑30%.</li>
-        <li>Automated reporting reducing manual effort by 25%.</li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="text-2xl font-bold text-blue-400">Globus Infocom Ltd.</h3>
-      <p class="italic text-sm text-gray-300">Senior Engineer | Aug 2017 – Mar 2024</p>
-      <ul class="list-disc list-inside mt-2 text-gray-300 text-sm">
-        <li>Improved service analytics accuracy by 40%.</li>
-        <li>Built KPI trackers, ensuring 98% SLA adherence and 20% less delay.</li>
-        <li>Reduced repeat service calls by 30%.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- Projects -->
-<section id="projects" class="section fade-up">
-  <h2 class="text-4xl font-bold mb-6 gradient-text">Projects</h2>
-  <div class="grid md:grid-cols-2 gap-6">
-    <div class="hover-card p-6">
-      <h3 class="text-xl font-bold text-blue-400">Social Media Ad Optimization Dashboard</h3>
-      <p class="text-sm text-gray-300">Python | Power BI</p>
-      <ul class="list-disc list-inside mt-2 text-gray-300 text-sm">
-        <li>Built ROI & CPA dashboards; improved ad ROI +10%</li>
-        <li><a href="https://github.com/SainiBimal/Optimizing-Social-Media-Ad-Campaign-Performance" class="text-blue-500 hover:underline">GitHub →</a></li>
-      </ul>
-    </div>
-    <div class="hover-card p-6">
-      <h3 class="text-xl font-bold text-blue-400">Video Game Sales & Engagement Analysis</h3>
-      <p class="text-sm text-gray-300">SQL | Python</p>
-      <ul class="list-disc list-inside mt-2 text-gray-300 text-sm">
-        <li>Analyzed 11K+ games, found 20% untapped growth.</li>
-        <li><a href="https://github.com/SainiBimal/Video-Game-Sales-and-Engagement-Analysis" class="text-blue-500 hover:underline">GitHub →</a></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- Skills -->
-<section id="skills" class="section fade-up bg-gray-900 rounded-xl shadow-lg">
-  <h2 class="text-4xl font-bold mb-6 gradient-text">Key Skills</h2>
-  <div class="grid md:grid-cols-2 gap-4 text-gray-300 text-sm">
-    <ul class="list-disc list-inside">
-      <li>EDA, Data Wrangling, Visualization</li>
-      <li>Statistical Modeling & Hypothesis Testing</li>
-      <li>Machine Learning (Regression, Clustering)</li>
+  <!-- Experience Section -->
+  <section id="experience">
+    <h2>Professional Experience</h2>
+    <h3>Unified Mentor Pvt. Ltd. and Labmentix Edtech Pvt. Ltd. | Data Analyst Intern | Jun 2025 – Present</h3>
+    <ul>
+      <li>Conducted analytics projects on datasets, including data cleaning, transformation, and EDA using SQL, Python, and Excel.</li>
+      <li>Designed Power BI dashboards for HR and Marketing, driving insights into employee attrition (↓12%) and ad campaign optimization (↑30% ROI).</li>
+      <li>Automated reporting with Python Pandas and Power Query, reducing manual effort by 25%.</li>
+      <li>Applied statistical techniques to validate business hypotheses and support decision-making.</li>
+      <li>Collaborated with teams to define growth KPIs, enabling 8% improvement in regional targeting.</li>
     </ul>
-    <ul class="list-disc list-inside">
-      <li>Excel, SQL, Python (Pandas, NumPy, Seaborn)</li>
-      <li>Power BI, Prompt Engineering</li>
-      <li>Automation & Dashboard Design</li>
+
+    <h3>Globus Infocom Ltd. | Senior Engineer – Projects and Services | Aug 2017 – Mar 2024</h3>
+    <ul>
+      <li>Analyzed service and AMC data in Salesforce and Excel, improving reporting accuracy by 40%.</li>
+      <li>Built Excel trackers and dashboards for SLA compliance, installations, and project KPIs, ensuring 98% SLA adherence and reducing delays by 20%.</li>
+      <li>Identified recurring customer issues, reducing repeated service calls by 30%.</li>
+      <li>Conducted post-implementation analysis and customer satisfaction surveys, achieving a 25% improvement in client feedback scores.</li>
+      <li>Standardized reporting templates and documentation systems for better resource allocation and forecasting.</li>
     </ul>
-  </div>
-</section>
+  </section>
 
-<!-- Education -->
-<section id="education" class="section fade-up bg-gray-800 rounded-xl shadow-lg">
-  <h2 class="text-4xl font-bold mb-6 gradient-text">Education & Certifications</h2>
-  <p><strong>B.E. in Electrical Engineering</strong> — Rustam Ji Institute of Technology, Gwalior (2016)</p>
-  <p><strong>Data Analytics Certification</strong> — Coding Ninjas (2024–2025)</p>
-  <ul class="list-disc list-inside mt-2 text-gray-300 text-sm">
-    <li>Certificate of Excellence (98%)</li>
-    <li>Hackathon Finalist – Coding Ninjas 10X Club</li>
-  </ul>
-</section>
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
 
-<footer class="text-center py-8 text-sm text-gray-400">
-  © 2025 Bimal Kumar Saini | Crafted with ❤️ and GSAP Animation
-</footer>
+    <div class="project">
+      <h3>Social Media Ad Optimization Dashboard | Python, Power BI | <a href="#">GitHub Link</a></h3>
+      <ul>
+        <li>Built ROI and CPA dashboards by segmenting campaigns across demographics and interests.</li>
+        <li>Identified high-ROI segments, reallocated spend, and cut low-return campaigns.</li>
+        <li>Integrated AI summarization to flag underperforming campaigns and recommend budget shifts.</li>
+        <li>Delivered +10% ROI and 30% ad spend reduction via optimization.</li>
+      </ul>
+    </div>
 
-<script>
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-ScrollSmoother.create({ wrapper:"body", content:"body", smooth:1.2, effects:true });
-gsap.utils.toArray('.fade-up').forEach(el=>{
-  gsap.from(el,{ scrollTrigger:{trigger:el,start:"top 85%"}, y:50, opacity:0, duration:1, ease:"power3.out" });
-});
-const cursor = document.getElementById('cursor');
-document.addEventListener('mousemove', e => { cursor.style.top=e.clientY+'px'; cursor.style.left=e.clientX+'px'; });
-document.querySelectorAll('.hover-card').forEach(card=>{
-  card.addEventListener('mouseenter',()=>{ gsap.to(cursor,{scale:2, backgroundColor:"rgba(147,51,234,0.7)"}); });
-  card.addEventListener('mouseleave',()=>{ gsap.to(cursor,{scale:1, backgroundColor:"rgba(59,130,246,0.7)"}); });
-});
-</script>
+    <div class="project">
+      <h3>Video Game Sales & Engagement Analysis | SQL, Python | <a href="#">GitHub Link</a></h3>
+      <ul>
+        <li>Analyzed 11K+ games with $8.9B sales to find top markets, genres, and platforms.</li>
+        <li>Discovered untapped growth potential in 1.3M backlogs and 684K wishlists.</li>
+        <li>Suggested marketing and genre focus plans to raise engagement.</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <h3>Electric Vehicle Analysis Dashboard | Excel, SQL, Python, Power BI | <a href="#">GitHub Link</a></h3>
+      <ul>
+        <li>Analyzed EV sales data across states, timeframes, and vehicle types.</li>
+        <li>Built dynamic Power BI dashboards with slicers and KPIs for regional targeting.</li>
+        <li>Enabled 8% improvement in targeting strategies with AI-driven recommendations.</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <h3>HR Attrition Intelligence Dashboard | Power BI | <a href="#">GitHub Link</a></h3>
+      <ul>
+        <li>Developed interactive Power BI dashboard using DAX measures to analyze employee attrition.</li>
+        <li>Identified key risk patterns across departments and age groups.</li>
+        <li>Reduced churn by 12% via data-driven retention strategies.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Key Skills</h2>
+    <ul>
+      <li><strong>Core Analytics:</strong> Data Cleaning, EDA, Statistical Analysis, Data Storytelling</li>
+      <li><strong>Machine Learning & Statistics:</strong> Regression, Decision Trees, Clustering, Hypothesis Testing</li>
+      <li><strong>Tools & Tech:</strong> Excel, SQL, Python, Power BI, Prompt Engineering</li>
+      <li><strong>Other Expertise:</strong> Dashboard Design, Reporting Automation, Technical Support</li>
+      <li><strong>Soft Skills:</strong> Analytical Thinking, Communication, Problem Solving, Time Management</li>
+    </ul>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education">
+    <h2>Education</h2>
+    <h3>Rustam Ji Institute of Technology, Tekanpur, Gwalior | B.E. in Electrical Engineering | 2012 – 2016</h3>
+    <p>CGPA: 7.14</p>
+
+    <h3>Training & Certifications</h3>
+    <ul>
+      <li>Coding Ninjas Data Analytics Certification | Jul 2024 – Apr 2025 | <a href="#">Certificate Link</a></li>
+      <li>Hackathon Finalist – Coding Ninjas 10X Club | <a href="#">Certificate Link</a></li>
+      <li>Certificate of Excellence in Data Analytics (98% completion) | <a href="#">Certificate Link</a></li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Bimal Kumar Saini | All Rights Reserved</p>
+  </footer>
 
 </body>
 </html>
