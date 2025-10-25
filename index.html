@@ -1,3 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bimal Kumar Saini | Interactive Resume</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollSmoother.min.js"></script>
+<style>
+  html, body { height: 100%; margin:0; background:#f9fafb; overflow-x:hidden; }
+  .section { max-width:1100px; margin:auto; padding:6rem 1.5rem; position:relative; }
+  .fade-up { opacity:0; transform:translateY(40px); }
+  .gradient-text { background:linear-gradient(90deg,#1e3a8a,#2563eb,#3b82f6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .hover-card { transition:all 0.4s ease; }
+  .hover-card:hover { transform:translateY(-10px) scale(1.03); box-shadow:0 15px 35px rgba(0,0,0,0.15);}
+  .nav { position:fixed; top:0; width:100%; backdrop-filter:blur(12px); background:rgba(255,255,255,0.6); z-index:100; }
+  .cursor { position:fixed; top:0; left:0; width:20px; height:20px; border-radius:50%; background:rgba(59,130,246,0.7); pointer-events:none; transform:translate(-50%,-50%); transition:0.15s; z-index:9999; }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<!-- Navbar -->
+<nav class="nav flex justify-center space-x-8 py-4 text-sm font-medium text-gray-700">
+  <a href="#profile" class="hover:text-indigo-600">Profile</a>
+  <a href="#experience" class="hover:text-indigo-600">Experience</a>
+  <a href="#projects" class="hover:text-indigo-600">Projects</a>
+  <a href="#skills" class="hover:text-indigo-600">Skills</a>
+  <a href="#education" class="hover:text-indigo-600">Education</a>
+</nav>
+
+<!-- Hero -->
+<header class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-indigo-700 via-blue-600 to-indigo-800 text-white relative overflow-hidden">
+  <h1 class="text-6xl md:text-7xl font-bold mb-4 gradient-text">Bimal Kumar Saini</h1>
+  <p class="text-xl mb-2">Data Analyst | Excel • SQL • Python • Power BI</p>
+  <p class="text-sm opacity-80">📍 Tigri, New Delhi | 📞 +91-9017295863 | ✉️ bimalsaini333@gmail.com</p>
+  <div class="flex space-x-6 mt-6 text-white text-xl">
+    <a href="https://www.linkedin.com/in/bimalsaini333/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/SainiBimal" target="_blank">GitHub</a>
+    <a href="https://www.kaggle.com/bimalkumarsaini" target="_blank">Kaggle</a>
+  </div>
+</header>
+
+<!-- Profile -->
+<section id="profile" class="section fade-up">
+  <h2 class="text-4xl font-bold mb-6 gradient-text">Profile Summary</h2>
+  <p class="leading-relaxed text-gray-800">Results-driven Data Analyst with 7+ years of engineering experience, expertise in Excel, SQL, Python, Power BI, and statistical modeling. Transforms raw data into actionable insights through EDA, predictive analytics, and data storytelling to drive measurable business outcomes.</p>
+</section>
+
+<!-- Experience -->
+<section id="experience" class="section fade-up bg-white rounded-xl shadow-lg">
+  <h2 class="text-4xl font-bold mb-6 gradient-text">Professional Experience</h2>
+  <div class="space-y-6">
+    <div>
+      <h3 class="text-2xl font-bold text-indigo-700">Unified Mentor & Labmentix Edtech</h3>
+      <p class="italic text-sm text-gray-600">Data Analyst Intern — Remote | Jun 2025 – Present</p>
+      <ul class="list-disc list-inside mt-2 text-gray-700 text-sm">
+        <li>Conducted analytics projects using SQL, Python, Excel.</li>
+        <li>Power BI dashboards improved HR attrition ↓12% and ad ROI ↑30%.</li>
+        <li>Automated reporting reducing manual effort by 25%.</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-2xl font-bold text-indigo-700">Globus Infocom Ltd.</h3>
+      <p class="italic text-sm text-gray-600">Senior Engineer | Aug 2017 – Mar 2024</p>
+      <ul class="list-disc list-inside mt-2 text-gray-700 text-sm">
+        <li>Improved service analytics accuracy by 40%.</li>
+        <li>Built KPI trackers, ensuring 98% SLA adherence and 20% less delay.</li>
+        <li>Reduced repeat service calls by 30%.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="section fade-up">
+  <h2 class="text-4xl font-bold mb-6 gradient-text">Projects</h2>
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="hover-card p-6 bg-white rounded-lg shadow">
+      <h3 class="text-xl font-bold text-indigo-700">Social Media Ad Optimization Dashboard</h3>
+      <p class="text-sm text-gray-500">Python | Power BI</p>
+      <ul class="list-disc list-inside mt-2 text-gray-700 text-sm">
+        <li>Built ROI & CPA dashboards; improved ad ROI +10%</li>
+        <li><a href="https://github.com/SainiBimal/Optimizing-Social-Media-Ad-Campaign-Performance" class="text-blue-500 hover:underline">GitHub →</a></li>
+      </ul>
+    </div>
+    <div class="hover-card p-6 bg-white rounded-lg shadow">
+      <h3 class="text-xl font-bold text-indigo-700">Video Game Sales & Engagement Analysis</h3>
+      <p class="text-sm text-gray-500">SQL | Python</p>
+      <ul class="list-disc list-inside mt-2 text-gray-700 text-sm">
+        <li>Analyzed 11K+ games, found 20% untapped growth.</li>
+        <li><a href="https://github.com/SainiBimal/Video-Game-Sales-and-Engagement-Analysis" class="text-blue-500 hover:underline">GitHub →</a></li>
+      </ul>
+    </div>
+    <div class="hover-card p-6 bg-white rounded-lg shadow">
+      <h3 class="text-xl font-bold text-indigo-700">Electric Vehicle Analysis Dashboard</h3>
+      <p class="text-sm text-gray-500">SQL | Power BI</p>
+      <ul class="list-disc list-inside mt-2 text-gray-700 text-sm">
+        <li>Identified top-performing states and growth years.</li>
+        <li><a href="https://github.com/SainiBimal/ELECTRIC-VEHICLE" class="text-blue-500 hover:underline">GitHub →</a></li>
+      </ul>
+    </div>
+    <div class="hover-card p-6 bg-white rounded-lg shadow">
+      <h3 class="text-xl font-bold text-indigo-700">HR Attrition Intelligence Dashboard</h3>
+      <p class="text-sm text-gray-500">Power BI | DAX</p>
+      <ul class="list-disc list-inside mt-2 text-gray-700 text-sm">
+        <li>Developed dashboard reducing churn by 12%.</li>
+        <li><a href="https://github.com/SainiBimal/Attrition-Intelligence-Dashboard" class="text-blue-500 hover:underline">GitHub →</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="section fade-up bg-white rounded-xl shadow-lg">
+  <h2 class="text-4xl font-bold mb-6 gradient-text">Key Skills</h2>
+  <div class="grid md:grid-cols-2 gap-4 text-gray-700 text-sm">
+    <ul class="list-disc list-inside">
+      <li>EDA, Data Wrangling, Visualization</li>
+      <li>Statistical Modeling & Hypothesis Testing</li>
+      <li>Machine Learning (Regression, Clustering)</li>
+    </ul>
+    <ul class="list-disc list-inside">
+      <li>Excel, SQL, Python (Pandas, NumPy, Seaborn)</li>
+      <li>Power BI, Prompt Engineering</li>
+      <li>Automation & Dashboard Design</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Education -->
+<section id="education" class="section fade-up">
+  <h2 class="text-4xl font-bold mb-6 gradient-text">Education & Certifications</h2>
+  <p><strong>B.E. in Electrical Engineering</strong> — Rustam Ji Institute of Technology, Gwalior (2016)</p>
+  <p><strong>Data Analytics Certification</strong> — Coding Ninjas (2024–2025)</p>
+  <ul class="list-disc list-inside mt-2 text-gray-700 text-sm">
+    <li>Certificate of Excellence (98%)</li>
+    <li>Hackathon Finalist – Coding Ninjas 10X Club</li>
+  </ul>
+</section>
+
+<footer class="text-center py-8 text-sm text-gray-600">
+  © 2025 Bimal Kumar Saini | Crafted with ❤️ and GSAP Animation
+</footer>
+
 <script>
   // GSAP ScrollTrigger and ScrollSmoother
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
@@ -12,10 +160,7 @@
   // Fade-up animations
   gsap.utils.toArray('.fade-up').forEach(el => {
     gsap.from(el, {
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%",
-      },
+      scrollTrigger: { trigger: el, start: "top 85%" },
       y: 50,
       opacity: 0,
       duration: 1,
@@ -31,7 +176,7 @@
     cursor.style.left = e.clientX + 'px';
   });
 
-  // Hover effects on cards
+  // Hover effects on project cards
   document.querySelectorAll('.hover-card').forEach(card => {
     card.addEventListener('mouseenter', () => {
       gsap.to(cursor, { scale: 2, backgroundColor: "rgba(99,102,241,0.7)" });
@@ -41,3 +186,6 @@
     });
   });
 </script>
+
+</body>
+</html>
