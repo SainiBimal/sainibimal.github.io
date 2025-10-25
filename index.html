@@ -1,63 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bimal Kumar Saini | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Bimal Kumar Saini</h1>
-    <p>Data Analyst | SQL | Python | Power BI</p>
-    <div class="contact-links">
-      <a href="mailto:bimalsaini333@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/bimalsaini333" target="_blank">LinkedIn</a>
-      <a href="https://github.com/bimalsaini333" target="_blank">GitHub</a>
-      <a href="https://www.kaggle.com/bimalsaini333" target="_blank">Kaggle</a>
-    </div>
-  </header>
+<script>
+  // GSAP ScrollTrigger and ScrollSmoother
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-  <section id="about">
-    <h2>Profile Summary</h2>
-    <p>Results-driven Data Analyst with 7+ years of engineering experience, transforming raw datasets into actionable insights through EDA, predictive analytics, and data storytelling...</p>
-  </section>
+  ScrollSmoother.create({
+    wrapper: "body",
+    content: "body",
+    smooth: 1.2,
+    effects: true
+  });
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-card">
-      <h3>Social Media Ad Optimization Dashboard</h3>
-      <p>Python, Power BI | <a href="projects/social-media-dashboard" target="_blank">GitHub</a></p>
-    </div>
-    <div class="project-card">
-      <h3>Video Game Sales & Engagement Analysis</h3>
-      <p>SQL, Python | <a href="projects/video-game-analysis" target="_blank">GitHub</a></p>
-    </div>
-    <div class="project-card">
-      <h3>Electric Vehicle Analysis Dashboard</h3>
-      <p>Excel, SQL, Python, Power BI | <a href="projects/ev-dashboard" target="_blank">GitHub</a></p>
-    </div>
-    <div class="project-card">
-      <h3>HR Attrition Intelligence Dashboard</h3>
-      <p>Power BI | <a href="projects/hr-attrition" target="_blank">GitHub</a></p>
-    </div>
-  </section>
+  // Fade-up animations
+  gsap.utils.toArray('.fade-up').forEach(el => {
+    gsap.from(el, {
+      scrollTrigger: {
+        trigger: el,
+        start: "top 85%",
+      },
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+      stagger: 0.2
+    });
+  });
 
-  <section id="skills">
-    <h2>Key Skills</h2>
-    <ul>
-      <li>Data Cleaning & Preprocessing</li>
-      <li>EDA & Data Visualization</li>
-      <li>SQL, Python, Power BI</li>
-      <li>Machine Learning (Regression, Clustering)</li>
-      <li>Dashboard Design & Reporting Automation</li>
-    </ul>
-  </section>
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  document.addEventListener('mousemove', e => {
+    cursor.style.top = e.clientY + 'px';
+    cursor.style.left = e.clientX + 'px';
+  });
 
-  <footer>
-    <p>&copy; 2025 Bimal Kumar Saini</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+  // Hover effects on cards
+  document.querySelectorAll('.hover-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      gsap.to(cursor, { scale: 2, backgroundColor: "rgba(99,102,241,0.7)" });
+    });
+    card.addEventListener('mouseleave', () => {
+      gsap.to(cursor, { scale: 1, backgroundColor: "rgba(59,130,246,0.7)" });
+    });
+  });
+</script>
