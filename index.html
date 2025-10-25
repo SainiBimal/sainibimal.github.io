@@ -1,178 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bimal Kumar Saini | Data Analyst Resume</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bimal Kumar Saini | Interactive Resume</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
   <style>
-    body {
-      background: #f9fafb;
-      color: #1f2937;
-      font-family: 'Inter', sans-serif;
+    html, body {
       scroll-behavior: smooth;
+      background: #f9fafb;
     }
-    .section-title {
-      border-left: 4px solid #3b82f6;
-      padding-left: 0.5rem;
-      font-weight: 700;
-      color: #1e3a8a;
+    .section {
+      padding: 6rem 1.5rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    /* Gradient text heading */
+    .gradient-text {
+      background: linear-gradient(90deg, #1e3a8a, #2563eb, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hover-card {
+      transition: all 0.4s ease;
     }
     .hover-card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-      transition: all 0.3s ease-in-out;
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     }
-    @media print {
-      body { background: white; }
-      a::after { content: ""; }
+    .nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.7);
+      z-index: 100;
     }
   </style>
 </head>
 
-<body class="pb-10">
+<body class="font-sans text-gray-800">
 
-  <!-- Header -->
-  <header class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-10 text-center shadow-lg">
-    <h1 class="text-4xl font-bold tracking-wide">Bimal Kumar Saini</h1>
-    <p class="text-lg mt-2">Data Analyst | SQL | Python | Power BI | Excel</p>
-    <div class="mt-3 text-sm">
-      📍 Tigri, New Delhi • 📞 +91-9017295863 • ✉️ <a href="mailto:bimalsaini333@gmail.com" class="underline">bimalsaini333@gmail.com</a>
-    </div>
-    <div class="flex justify-center space-x-5 mt-4 text-sm">
-      <a href="https://linkedin.com" class="hover:underline">LinkedIn</a>
-      <a href="https://github.com" class="hover:underline">GitHub</a>
-      <a href="https://kaggle.com" class="hover:underline">Kaggle</a>
+  <!-- Navbar -->
+  <nav class="nav flex justify-center space-x-8 py-4 text-sm font-medium text-gray-700">
+    <a href="#profile" class="hover:text-indigo-600">Profile</a>
+    <a href="#experience" class="hover:text-indigo-600">Experience</a>
+    <a href="#projects" class="hover:text-indigo-600">Projects</a>
+    <a href="#skills" class="hover:text-indigo-600">Skills</a>
+    <a href="#education" class="hover:text-indigo-600">Education</a>
+  </nav>
+
+  <!-- Hero -->
+  <header class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-indigo-700 via-blue-600 to-indigo-800 text-white">
+    <h1 class="text-5xl md:text-6xl font-bold mb-3 gradient-text">Bimal Kumar Saini</h1>
+    <p class="text-lg mb-4">Data Analyst | Excel • SQL • Python • Power BI</p>
+    <p class="text-sm opacity-80">📍 Tigri, New Delhi | 📞 +91-9017295863 | ✉️ bimalsaini333@gmail.com</p>
+    <div class="flex space-x-6 mt-6 text-white text-xl">
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+      <a href="https://github.com" target="_blank">GitHub</a>
+      <a href="https://kaggle.com" target="_blank">Kaggle</a>
     </div>
   </header>
 
-  <main class="max-w-5xl mx-auto p-6">
+  <!-- Profile -->
+  <section id="profile" class="section fade-up">
+    <h2 class="text-3xl font-semibold mb-6 gradient-text">Profile Summary</h2>
+    <p class="leading-relaxed">
+      Results-driven Data Analyst with 7+ years of engineering experience and strong expertise in Microsoft Excel, SQL,
+      Python, Power BI, and statistical modeling. Skilled in transforming raw datasets into actionable insights through
+      EDA, predictive analytics, and data storytelling to drive measurable business outcomes, including +10% ROI gain,
+      -30% ad spend reduction, and 8% improvement in EV targeting strategies.
+    </p>
+  </section>
 
-    <!-- Profile Summary -->
-    <section class="mt-8">
-      <h2 class="text-2xl section-title mb-2">Profile Summary</h2>
-      <p class="text-justify leading-relaxed">
-        Results-driven Data Analyst with 7+ years of engineering experience and strong expertise in Microsoft Excel, SQL,
-        Python, Power BI, and statistical modeling. Skilled in transforming raw datasets into actionable insights through
-        EDA, predictive analytics, and data storytelling to drive measurable business outcomes, including +10% ROI gain,
-        -30% ad spend reduction, and 8% improvement in EV targeting strategies. Passionate about applying machine learning
-        and big data analytics to address real-world business, marketing, and risk challenges.
-      </p>
-    </section>
-
-    <!-- Experience -->
-    <section class="mt-8">
-      <h2 class="text-2xl section-title mb-4">Professional Experience</h2>
-
-      <div class="hover-card bg-white p-5 rounded-xl shadow-sm mb-6">
-        <div class="flex justify-between items-center">
-          <h3 class="font-semibold text-lg">Unified Mentor Pvt. Ltd. & Labmentix Edtech Pvt. Ltd.</h3>
-          <p class="text-sm text-gray-500">Jun 2025 – Present | Remote</p>
-        </div>
-        <p class="text-indigo-700 font-medium mb-2">Data Analyst Intern</p>
-        <ul class="list-disc list-inside text-sm leading-relaxed">
-          <li>Conducted real-world analytics projects using SQL, Python, and Excel.</li>
-          <li>Designed Power BI dashboards for HR and Marketing, driving insights into employee attrition (↓12%) and ad ROI (↑30%).</li>
-          <li>Automated reporting workflows with Python & Power Query, reducing manual effort by 25%.</li>
-          <li>Applied regression, correlation, and hypothesis testing for business insights.</li>
+  <!-- Experience -->
+  <section id="experience" class="section fade-up bg-white rounded-xl shadow-lg">
+    <h2 class="text-3xl font-semibold mb-6 gradient-text">Professional Experience</h2>
+    <div class="space-y-6">
+      <div>
+        <h3 class="text-xl font-bold text-indigo-700">Unified Mentor Pvt. Ltd. & Labmentix Edtech Pvt. Ltd.</h3>
+        <p class="italic text-sm text-gray-600">Data Analyst Intern — Remote | Jun 2025 – Present</p>
+        <ul class="list-disc list-inside mt-2 text-gray-700 text-sm leading-relaxed">
+          <li>Conducted analytics projects on HR & marketing datasets using SQL, Python, and Excel.</li>
+          <li>Designed Power BI dashboards improving HR attrition insights (↓12%) and ad ROI (↑30%).</li>
+          <li>Automated reporting with Python & Power Query (−25% manual work).</li>
+          <li>Applied regression & hypothesis testing for data-driven decisions.</li>
         </ul>
       </div>
-
-      <div class="hover-card bg-white p-5 rounded-xl shadow-sm">
-        <div class="flex justify-between items-center">
-          <h3 class="font-semibold text-lg">Globus Infocom Ltd.</h3>
-          <p class="text-sm text-gray-500">Aug 2017 – Mar 2024 | Noida, UP</p>
-        </div>
-        <p class="text-indigo-700 font-medium mb-2">Senior Engineer – Projects and Services</p>
-        <ul class="list-disc list-inside text-sm leading-relaxed">
-          <li>Analyzed service and AMC data in Salesforce & Excel, improving reporting accuracy by 40%.</li>
-          <li>Built Excel dashboards for SLA compliance & KPIs, achieving 98% SLA adherence.</li>
-          <li>Reduced recurring issues by 30% via complaint data analysis and forecasting.</li>
+      <div>
+        <h3 class="text-xl font-bold text-indigo-700">Globus Infocom Ltd.</h3>
+        <p class="italic text-sm text-gray-600">Senior Engineer — Projects & Services | Aug 2017 – Mar 2024</p>
+        <ul class="list-disc list-inside mt-2 text-gray-700 text-sm leading-relaxed">
+          <li>Improved service analytics accuracy by 40% using Salesforce + Excel dashboards.</li>
+          <li>Built KPI trackers ensuring 98% SLA adherence and reduced project delays by 20%.</li>
+          <li>Reduced repeat service calls by 30% through data-driven root cause analysis.</li>
         </ul>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Projects -->
-    <section class="mt-10">
-      <h2 class="text-2xl section-title mb-4">Selected Projects</h2>
-
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-white p-5 rounded-xl shadow hover-card">
-          <h3 class="font-semibold text-lg text-indigo-700">Social Media Ad Optimization Dashboard</h3>
-          <p class="text-sm mb-2">Python | Power BI</p>
-          <ul class="list-disc list-inside text-sm">
-            <li>Built ROI and CPA dashboards to optimize ad campaigns.</li>
-            <li>Delivered +10% ROI and -30% ad spend reduction.</li>
-            <li><a href="#" class="text-blue-500 hover:underline">View on GitHub →</a></li>
-          </ul>
-        </div>
-
-        <div class="bg-white p-5 rounded-xl shadow hover-card">
-          <h3 class="font-semibold text-lg text-indigo-700">Video Game Sales & Engagement Analysis</h3>
-          <p class="text-sm mb-2">SQL | Python</p>
-          <ul class="list-disc list-inside text-sm">
-            <li>Analyzed 11K+ games worth $8.9B sales to identify growth markets.</li>
-            <li>Revealed 20% untapped engagement potential.</li>
-            <li><a href="#" class="text-blue-500 hover:underline">View on GitHub →</a></li>
-          </ul>
-        </div>
-
-        <div class="bg-white p-5 rounded-xl shadow hover-card">
-          <h3 class="font-semibold text-lg text-indigo-700">Electric Vehicle Analysis Dashboard</h3>
-          <p class="text-sm mb-2">Excel | SQL | Power BI</p>
-          <ul class="list-disc list-inside text-sm">
-            <li>Identified top states (UP, Maharashtra) and growth years (2021–2022).</li>
-            <li>Enabled 8% improvement in EV targeting strategies.</li>
-            <li><a href="#" class="text-blue-500 hover:underline">View on GitHub →</a></li>
-          </ul>
-        </div>
-
-        <div class="bg-white p-5 rounded-xl shadow hover-card">
-          <h3 class="font-semibold text-lg text-indigo-700">HR Attrition Intelligence Dashboard</h3>
-          <p class="text-sm mb-2">Power BI | DAX</p>
-          <ul class="list-disc list-inside text-sm">
-            <li>Developed attrition dashboards using job satisfaction & tenure metrics.</li>
-            <li>Helped HR reduce churn by 12% through data-driven insights.</li>
-            <li><a href="#" class="text-blue-500 hover:underline">View on GitHub →</a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section class="mt-10">
-      <h2 class="text-2xl section-title mb-4">Key Skills</h2>
-      <div class="grid md:grid-cols-2 gap-6 text-sm">
-        <ul class="list-disc list-inside">
-          <li>Data Cleaning, EDA, Visualization, Business Insights</li>
-          <li>Statistical Analysis, Hypothesis Testing</li>
-          <li>Regression, Decision Trees, Clustering</li>
-        </ul>
-        <ul class="list-disc list-inside">
-          <li>Excel, SQL, Python (Pandas, NumPy, Seaborn)</li>
-          <li>Power BI, Prompt Engineering</li>
-          <li>Automation, Dashboard Design</li>
+  <!-- Projects -->
+  <section id="projects" class="section fade-up">
+    <h2 class="text-3xl font-semibold mb-6 gradient-text">Projects</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="hover-card p-6 bg-white rounded-lg shadow">
+        <h3 class="font-bold text-lg text-indigo-700">Social Media Ad Optimization Dashboard</h3>
+        <p class="text-sm text-gray-500">Python | Power BI</p>
+        <ul class="list-disc list-inside text-sm mt-2">
+          <li>Built ROI & CPA dashboards; improved ad ROI by +10%.</li>
+          <li><a href="#" class="text-blue-500 hover:underline">GitHub Link →</a></li>
         </ul>
       </div>
-    </section>
+      <div class="hover-card p-6 bg-white rounded-lg shadow">
+        <h3 class="font-bold text-lg text-indigo-700">Video Game Sales & Engagement Analysis</h3>
+        <p class="text-sm text-gray-500">SQL | Python</p>
+        <ul class="list-disc list-inside text-sm mt-2">
+          <li>Analyzed 11K+ games ($8.9B sales), found 20% untapped growth.</li>
+          <li><a href="#" class="text-blue-500 hover:underline">GitHub Link →</a></li>
+        </ul>
+      </div>
+      <div class="hover-card p-6 bg-white rounded-lg shadow">
+        <h3 class="font-bold text-lg text-indigo-700">Electric Vehicle Analysis Dashboard</h3>
+        <p class="text-sm text-gray-500">SQL | Power BI</p>
+        <ul class="list-disc list-inside text-sm mt-2">
+          <li>Identified top-performing states and growth years.</li>
+          <li><a href="#" class="text-blue-500 hover:underline">GitHub Link →</a></li>
+        </ul>
+      </div>
+      <div class="hover-card p-6 bg-white rounded-lg shadow">
+        <h3 class="font-bold text-lg text-indigo-700">HR Attrition Intelligence Dashboard</h3>
+        <p class="text-sm text-gray-500">Power BI | DAX</p>
+        <ul class="list-disc list-inside text-sm mt-2">
+          <li>Developed attrition dashboard reducing churn by 12%.</li>
+          <li><a href="#" class="text-blue-500 hover:underline">GitHub Link →</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <!-- Education -->
-    <section class="mt-10">
-      <h2 class="text-2xl section-title mb-4">Education & Certifications</h2>
-      <p><strong>B.E. Electrical Engineering</strong> — Rustam Ji Institute of Technology, Gwalior (2016)</p>
-      <p class="mt-2"><strong>Data Analytics Certification</strong> — Coding Ninjas (2024–2025)</p>
-      <ul class="list-disc list-inside text-sm mt-2">
-        <li>Certificate of Excellence (98% Completion)</li>
-        <li>Hackathon Finalist – Coding Ninjas 10X Club</li>
+  <!-- Skills -->
+  <section id="skills" class="section fade-up bg-white rounded-xl shadow-lg">
+    <h2 class="text-3xl font-semibold mb-6 gradient-text">Key Skills</h2>
+    <div class="grid md:grid-cols-2 gap-4 text-gray-700 text-sm">
+      <ul class="list-disc list-inside">
+        <li>EDA, Data Wrangling, Visualization</li>
+        <li>Statistical Modeling & Hypothesis Testing</li>
+        <li>Machine Learning (Regression, Clustering)</li>
       </ul>
-    </section>
-  </main>
+      <ul class="list-disc list-inside">
+        <li>Excel, SQL, Python (Pandas, NumPy, Seaborn)</li>
+        <li>Power BI, Prompt Engineering</li>
+        <li>Automation & Dashboard Design</li>
+      </ul>
+    </div>
+  </section>
 
-  <!-- Footer -->
-  <footer class="text-center text-sm text-gray-600 mt-10">
-    © 2025 Bimal Kumar Saini | Built with ❤️ using HTML & Tailwind CSS
+  <!-- Education -->
+  <section id="education" class="section fade-up">
+    <h2 class="text-3xl font-semibold mb-6 gradient-text">Education & Certifications</h2>
+    <p><strong>B.E. in Electrical Engineering</strong> — Rustam Ji Institute of Technology, Gwalior (2016)</p>
+    <p><strong>Data Analytics Certification</strong> — Coding Ninjas (2024–2025)</p>
+    <ul class="list-disc list-inside mt-2 text-gray-700 text-sm">
+      <li>Certificate of Excellence (98%)</li>
+      <li>Hackathon Finalist – Coding Ninjas 10X Club</li>
+    </ul>
+  </section>
+
+  <footer class="text-center py-8 text-sm text-gray-600">
+    © 2025 Bimal Kumar Saini | Crafted with ❤️ and GSAP Animation
   </footer>
 
+  <script>
+    gsap.utils.toArray('.fade-up').forEach(el => {
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 85%',
+        },
+        y: 50,
+        opacity: 0,
+        duration: 1.2,
+        ease: 'power3.out'
+      });
+    });
+  </script>
 </body>
 </html>
